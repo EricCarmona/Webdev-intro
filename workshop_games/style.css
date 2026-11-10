@@ -1,0 +1,15 @@
+#product-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product img{
+    width: 100%;
+    min-width: 300px;
+    height: auto;
+    max-height: 168px;
+    display: block;
+}
+

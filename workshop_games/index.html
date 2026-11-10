@@ -4,70 +4,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Game</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Game Shop</title>
 </head>
 
 <body>
     <h1>Game shop</h1>
-    <p>Welkom bij Game shop!</p>
+    <p>Welcome to Game Shop!</p>
 
-    <!-- Menu -->
+
+    <!-- Navigation -->
     <nav>
         <a href="#home">Home</a>
-        <a href="#productos">Productos</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-    <!-- Over Game Shop -->
+    <!-- About Game Shop -->
     <section id="home">
-        <h2>Over Game Shop</h2>
-        <p>Game Shop is een videogamewinkel waar je je volgende favoriete games kunt ontdekken en kopen.</p>
+        <h2>About Game Shop</h2>
+        <p>Game Shop is a video game store where you can discover and buy your next favorite games.</p>
     </section>
 
-    <!-- Spellenlijst -->
-    <section id="productos">
-        <h2>Onze games</h2>
-        <ul>
-            <h3>Sekiro</h3>
-            <a href="https://en.wikipedia.org/wiki/Sekiro:_Shadows_Die_Twice" target="_blank"><img
-                    src="./assets//images/Sekiro.webp" alt="Sekiro" width="300" height="200"></a><br>
-            <a href="https://youtu.be/rXMX4YJ7Lks" target="_blank">Trailer Sekiro</a>
-            <p>&euro;59,99</p>
+    <!-- Game list -->
+    <section id="products">
+        <h2>Our Games</h2>
+        <div id="product-list">
+            <div class="product">
+                <h3>Sekiro</h3>
+                <a href="https://en.wikipedia.org/wiki/Sekiro:_Shadows_Die_Twice" target="_blank"><img
+                        src="./assets/images/Sekiro.webp" alt="Sekiro"></a><br>
+                <a href="https://youtu.be/rXMX4YJ7Lks" target="_blank">Sekiro Trailer</a>
+                <p>&euro;59.99</p>
+            </div>
+            <div class="product">
+                <h3>Dark Souls</h3>
+                <a href="https://en.wikipedia.org/wiki/Dark_Souls_(video_game)" target="_blank"><img
+                        src="./assets/images/darkSoulsl.webp" alt="Dark Souls"></a><br>
+                <a href="https://youtu.be/Woe0PYZPxRw" target="_blank">Dark Souls Trailer</a>
+                <p>&euro;39.99</p>
+            </div>
+            <div class="product">
+                <h3>Crash Twinsanity</h3>
+                <a href="https://en.wikipedia.org/wiki/Crash_Twinsanity" target="_blank"><img
+                        src="./assets/images/CrashTwinsanity.webp" alt="Crash Twinsanity"></a><br>
+                <a href="https://youtu.be/afMs2UTlTz0" target="_blank">Crash Twinsanity Trailer</a>
+                <p>&euro;50.00</p>
+            </div>
+            <div class="product">
+                <h3>Mario Galaxy</h3>
+                <a href="https://es.wikipedia.org/wiki/Super_Mario_Galaxy" target="_blank"><img
+                        src="./assets/images/MarioGalaxy.webp" alt="Mario Galaxy"></a><br>
+                <a href="https://youtu.be/u0p5JjVimMc" target="_blank">Mario Galaxy Trailer</a>
+                <p>&euro;40.00</p>
+            </div>
+            <div class="product">
+                <h3>Bloodborne</h3>
+                <a href="https://en.wikipedia.org/wiki/Bloodborne" target="_blank"><img
+                        src="./assets/images/Bloodborne.webp" alt="Bloodborne"></a><br>
+                <a href="https://youtu.be/iTDvYvlyPaE" target="_blank">Bloodborne Trailer</a>
+                <p>&euro;20.00</p>
+            </div>
+            <div class="product">
+                <h3> Five Nights at Freddy's</h3>
+                <a href="https://en.wikipedia.org/wiki/Five_Nights_at_Freddy%27s" target="_blank"><img
+                        src="./assets/images/fnaf.webp" alt=" Five Nights at Freddy's"></a><br>
+                <a href="https://youtu.be/Ws-yd9YPfdE" target="_blank"> Five Nights at Freddy's Trailer</a>
+                <p>&euro;5.00</p>
+            </div>
+            <div class="product">
+                <h3>Killzone liberation</h3>
+                <a href="https://en.wikipedia.org/wiki/Killzone:_Liberation" target="_blank"><img
+                        src="./assets/images/KillzoneLiberation.webp" alt="Killzone liberation"></a><br>
+                <a href="https://youtu.be/tmnByG0QqRE" target="_blank">Killzone liberation Trailer</a>
+                <p>&euro;7.99</p>
+            </div>
 
-
-            <h3>Dark souls</h3>
-            <a href="https://en.wikipedia.org/wiki/Dark_Souls_(video_game)" target="_blank"><img
-                    src="./assets/images/darkSoulsl.webp" alt="Dark souls" width="300" height="200"></a><br>
-            <a href="https://youtu.be/Woe0PYZPxRw" target="_blank">Trailer Dark souls</a>
-            <p>&euro;39,99</p>
-
-
-            <h3>Monster hunter wilds</h3>
-            <a href="https://en.wikipedia.org/wiki/Monster_Hunter_Wilds" target="_blank"><img
-                    src="./assets/images/monterHunterWilds.webp" alt="Monster hunter wilds" width="300" height="200"></a><br>
-            <a href="https://youtu.be/URG75CDX_rg" target="_blank">Trailer Monster hunter wilds</a>
-            <p>&euro;39,99</p>
-
-
-        </ul>
+        </div>
     </section>
 
-    <!-- Bestelvolgorde -->
-    <h3>Zo bestel je</h3>
+    <!-- How to order -->
+    <h3>How to Order</h3>
     <ol>
-        <li>Kies een Game</li>
-        <li>Vul het bestelformulier in</li>
-        <li>Er wordt binnen 24 uur een code naar uw e-mailadres gestuurd.</li>
+        <li>Choose a game</li>
+        <li>Fill out the order form</li>
+        <li>A game code will be sent to your email address within 24 hours.</li>
     </ol>
 
-    <!-- Contactinformatie -->
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Email: <a href="mailto:contacto@gameshop.com">contacto@gameshop.com</a></p>
-        <p>Teléfono: <a href="tel:+34123456789">+34 123 456 789</a></p>
+    <!-- Contact information -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:contact@gameshop.com">contact@gameshop.com</a></p>
+        <p>Phone: <a href="tel:+34123456789">+34 123 456 789</a></p>
     </section>
 
-    <a href="index.html">&larr; Terug naar boven</a>
+    <a href="#home">&larr; Back to top</a>
 
 </body>
 
