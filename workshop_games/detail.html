@@ -4,62 +4,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Game Details</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <a href="index.html" class="knop">&larr; Terug naar alle sneakers</a>
+<body class="detail-page">
+    <!-- Return to the game catalog -->
+    <a href="index.html#products" class="button">&larr; Back to all games</a>
 
-    <section id="Sekiro">
-        <img src="./assets/images/sekiro.webp" alt="Sekiro">
-        <div class="info">
-            <h2>Sekiro</h2>
-            <p class="prijs">&euro; 59.99</p>
-            <a href="https://en.wikipedia.org/wiki/Sekiro:_Shadows_Die_Twice" target="_blank">More info</a><br>
-            <a href="https://youtu.be/rXMX4YJ7Lks" target="_blank">Sekiro Trailer</a><br><br>
-            <a href="#" class="knop">Bestellen</a>
-        </div>
-    </section>
+    <!-- Each section matches a game link in index.html -->
+    <div id="product-info">
+        <section id="sekiro">
+            <div class="info">
+                <img src="./assets/images/Sekiro.webp" alt="Sekiro">
+                <h2>Sekiro</h2>
+                <p class="price">&euro; 59.99</p>
+                <a href="https://en.wikipedia.org/wiki/Sekiro:_Shadows_Die_Twice" target="_blank"
+                    rel="noopener noreferrer">More info</a><br>
+                <a href="https://youtu.be/rXMX4YJ7Lks" target="_blank" rel="noopener noreferrer">Sekiro
+                    Trailer</a><br><br>
+                <a href="#" class="button">Order</a>
+            </div>
+        </section>
 
+        <section id="dark-souls">
+            <div class="info">
+                <img src="./assets/images/darkSoulsl.webp" alt="Dark Souls">
+                <h2>Dark Souls</h2>
+                <p class="price">&euro; 39.99</p>
+                <a href="https://en.wikipedia.org/wiki/Dark_Souls_(video_game)" target="_blank"
+                    rel="noopener noreferrer">More info</a><br>
+                <a href="https://youtu.be/Woe0PYZPxRw" target="_blank" rel="noopener noreferrer">Dark Souls
+                    Trailer</a><br><br>
+                <a href="#" class="button">Order</a>
+            </div>
+        </section>
 
+        <section id="crash-twinsanity">
+            <div class="info">
+                <img src="./assets/images/CrashTwinsanity.webp" alt="Crash Twinsanity">
+                <h2>Crash Twinsanity</h2>
+                <p class="price">&euro; 50.00</p>
+                <a href="https://en.wikipedia.org/wiki/Crash_Twinsanity" target="_blank" rel="noopener noreferrer">More
+                    info</a><br>
+                <a href="https://youtu.be/afMs2UTlTz0" target="_blank" rel="noopener noreferrer">Crash Twinsanity
+                    Trailer</a><br><br>
+                <a href="#" class="button">Order</a>
+            </div>
+        </section>
 
-                <div class="product">
-                    <h3>Dark Souls</h3>
-                    <img src="./assets/images/darkSoulsl.webp" alt="Dark Souls"><br>
-                    <a href="detail.html#dark-souls" class="knop">Bekijk</a>
-    
-                </div>
-                <div class="product">
-                    <h3>Crash Twinsanity</h3>
-                    <img src="./assets/images/CrashTwinsanity.webp" alt="Crash Twinsanity"><br>
-                    <a href="detail.html#crash-twinsanity" class="knop">Bekijk</a>
-    
-                </div>
-                <div class="product">
-                    <h3>Mario Galaxy</h3>
-                    <img src="./assets/images/MarioGalaxy.webp" alt="Mario Galaxy"><br>
-                    <a href="detail.html#mario-galaxy" class="knop">Bekijk</a>
-    
-                </div>
-                <div class="product">
-                    <h3>Bloodborne</h3>
-                    <img src="./assets/images/Bloodborne.webp" alt="Bloodborne"><br>
-                    <a href="detail.html#bloodborne" class="knop">Bekijk</a>
-    
-                </div>
-                <div class="product">
-                    <h3> Five Nights at Freddy's</h3>
-                    <img src="./assets/images/fnaf.webp" alt=" Five Nights at Freddy's"><br>
-                    <a href="detail.html#five-nights-at-freddys" class="knop">Bekijk</a>
-    
-                </div>
-                <div class="product">
-                    <h3>Killzone liberation</h3>
-                    <img src="./assets/images/KillzoneLiberation.webp" alt="Killzone liberation"><br>
-                    <a href="detail.html#killzone-liberation" class="knop">Bekijk</a>
-    
-                </div>
+        <section id="mario-galaxy">
+            <div class="info">
+                <img src="./assets/images/MarioGalaxy.webp" alt="Mario Galaxy">
+                <h2>Mario Galaxy</h2>
+                <p class="price">&euro; 40.00</p>
+                <a href="https://en.wikipedia.org/wiki/Super_Mario_Galaxy" target="_blank"
+                    rel="noopener noreferrer">More info</a><br>
+                <a href="https://youtu.be/u0p5JjVimMc" target="_blank" rel="noopener noreferrer">Mario Galaxy
+                    Trailer</a><br><br>
+                <a href="#" class="button">Order</a>
+            </div>
+        </section>
+
+        <section id="bloodborne">
+            <div class="info">
+                <img src="./assets/images/Bloodborne.webp" alt="Bloodborne">
+                <h2>Bloodborne</h2>
+                <p class="price">&euro; 20.00</p>
+                <a href="https://en.wikipedia.org/wiki/Bloodborne" target="_blank" rel="noopener noreferrer">More
+                    info</a><br>
+                <a href="https://youtu.be/iTDvYvlyPaE" target="_blank" rel="noopener noreferrer">Bloodborne
+                    Trailer</a><br><br>
+                <a href="#" class="button">Order</a>
+            </div>
+        </section>
+
+        <section id="five-nights-at-freddys">
+            <div class="info">
+                <img src="./assets/images/fnaf.webp" alt="Five Nights at Freddy's">
+                <h2>Five Nights at Freddy's</h2>
+                <p class="price">&euro; 5.00</p>
+                <a href="https://en.wikipedia.org/wiki/Five_Nights_at_Freddy%27s" target="_blank"
+                    rel="noopener noreferrer">More info</a><br>
+                <a href="https://youtu.be/Ws-yd9YPfdE" target="_blank" rel="noopener noreferrer">Five Nights at Freddy's
+                    Trailer</a><br><br>
+                <a href="#" class="button">Order</a>
+            </div>
+        </section>
+
+        <section id="killzone-liberation">
+            <div class="info">
+                <img src="./assets/images/KillzoneLiberation.webp" alt="Killzone Liberation">
+                <h2>Killzone Liberation</h2>
+                <p class="price">&euro; 7.99</p>
+                <a href="https://en.wikipedia.org/wiki/Killzone:_Liberation" target="_blank"
+                    rel="noopener noreferrer">More info</a><br>
+                <a href="https://youtu.be/tmnByG0QqRE" target="_blank" rel="noopener noreferrer">Killzone Liberation
+                    Trailer</a><br><br>
+                <a href="#" class="button">Order</a>
+            </div>
+        </section>
+    </div>
 
 </body>
 
