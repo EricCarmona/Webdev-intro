@@ -9,6 +9,10 @@ body {
     background-color: #2D2B32;
 }
 
+.detail-page {
+    margin: 10px;
+}
+
 .detail-page section {
     display: none;
 }
@@ -77,10 +81,15 @@ header {
     flex-wrap: wrap;
 }
 
+#product-info > section:target {
+    flex: 1 1 100%;
+    min-width: 0;
+}
+
 .info img {
     width: 100%;
-    min-width: 300px;
-    height: auto;
+    height: clamp(220px, 45vw, 600px);
+    object-fit: contain;
     display: block;
     border-radius: 8px;
 }
@@ -97,4 +106,51 @@ header {
 
 .button:hover {
     background-color: #7631ad;
+}
+
+/* Orden */
+
+/* Formulier: maximaal 400px breed */
+.formulier {
+    max-width: 400px;
+}
+
+/* Elk veld: label boven het invoervak, ruimte eronder */
+.veld {
+    margin-bottom: 15px;
+}
+
+.veld label {
+    display: block;          /* label op een eigen regel */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Alle invoervelden even breed */
+.veld input,
+.veld select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.checkbox-veld {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-veld input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    flex: 0 0 18px;
+}
+
+.checkbox-veld label {
+    display: inline;
+    margin: 0;
 }
