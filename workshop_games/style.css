@@ -74,24 +74,41 @@ header {
 
 /* Game detail page */
 #product-info {
-    margin-top: 50px;
+    width: 100%;
+    margin-top: 32px;
     display: flex;
-    gap: 20px;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 #product-info > section:target {
     flex: 1 1 100%;
     min-width: 0;
+    width: 100%;
 }
 
-.info img {
+.info {
     width: 100%;
-    height: clamp(220px, 45vw, 600px);
+    max-width: 900px;
+    margin: 0 auto 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.game-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: #4f4b52;
+    border-radius: 8px;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     display: block;
-    border-radius: 8px;
 }
 
 /* Buttons */
@@ -112,7 +129,10 @@ header {
 
 /* Formulier: maximaal 400px breed */
 .formulier {
+    width: 100%;
     max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
 }
 
 /* Elk veld: label boven het invoervak, ruimte eronder */
@@ -153,4 +173,31 @@ header {
 .checkbox-veld label {
     display: inline;
     margin: 0;
+}
+
+.formulier .button {
+    width: 100%;
+    border: 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.game-content {
+    width: 100%;
+    max-width: 520px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    #product-info {
+        margin-top: 24px;
+    }
+
+    .info {
+        gap: 18px;
+    }
+
+    .game-content {
+        padding: 0 8px;
+    }
 }
