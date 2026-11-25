@@ -9,13 +9,14 @@
 </head>
 
 <body class="detail-page">
-    <a href="index.html#products" class="button">&larr; Back to all games</a>
-
+    
     <div id="product-info">
         <section id="sekiro">
+            <a href="detail.php#sekiro" class="button">&larr; Back</a>
+            <a href="index.php#products" class="button">&larr; Back to all games</a>
             <div class="info">
                 <div class="game-image">
-                    <img src="./assets/sekiro/Sekiro.webp" alt="Sekiro">
+                    <img src="./assets/sekiro/sekiro_cover.webp" alt="Sekiro">
                 </div>
                 <div class="game-content">
                     <form class="formulier">
