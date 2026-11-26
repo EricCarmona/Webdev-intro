@@ -10,14 +10,7 @@
 </head>
 
 <body>
-    <!-- Site navigation -->
-    <header>
-        <nav>
-            <a href="#home" class="button">Home</a>
-            <a href="#products" class="button">Products</a>
-            <a href="#contact" class="button">Contact</a>
-        </nav>
-    </header>
+    <?php include "includes/header.php"; ?>
 
     <!-- Main page content -->
     <main>
@@ -37,7 +30,7 @@
                 <div class="product">
                     <h3>Sekiro</h3>
                     <img src="./assets/sekiro/Sekiro.webp" alt="Sekiro"><br>
-                    <a href="detail.html#sekiro" class="button">View</a>
+                    <a href="detail.php#sekiro" class="button">View</a>
                 </div>
             </div>
         </section>
@@ -51,14 +44,7 @@
         </ol>
     </main>
 
-    <!-- Contact information -->
-    <footer>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:contact@gameshop.com">contact@gameshop.com</a></p>
-            <p>Phone: <a href="tel:+34123456789">+34 123 456 789</a></p>
-        </section>
-    </footer>
+    <?php include "includes/footer.php"; ?>
 
     <a href="#home" class="button">&larr; Back to top</a>
 </body>

@@ -9,7 +9,9 @@
 </head>
 
 <body class="detail-page">
-    <a href="index.html#products" class="button">&larr; Back to all games</a>
+    <?php include "includes/header.php"; ?>
+
+    <a href="index.php#products" class="button">&larr; Back to all games</a>
 
     <div id="product-info">
         <section id="sekiro">
@@ -54,6 +56,7 @@
             </div>
         </section>
     </div>
+    <?php include "includes/footer.php"; ?>
 </body>
 
 </html>
