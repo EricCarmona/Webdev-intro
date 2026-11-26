@@ -1,10 +1,28 @@
+<?php
+require_once "data.php";
+$id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
+
+if ($id === false || $id === null || $id < 1) {
+    http_response_code(400);
+    exit("ID de producto no válido.");
+}
+
+$statement = $pdo->prepare("SELECT id, name, price, description, img FROM producten WHERE id = ?");
+$statement->execute([$id]);
+$product = $statement->fetch();
+
+if (!$product) {
+    http_response_code(404);
+    exit("Producto no encontrado.");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Details</title>
+    <title><?= htmlspecialchars($product["name"], ENT_QUOTES, "UTF-8") ?></title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,24 +32,23 @@
     <!-- Return to the game catalog -->
     <a href="index.php#products" class="button">&larr; Back to all games</a>
 
-    <!-- Each section matches a game link in index.php -->
     <div id="product-info">
-        <section id="sekiro">
-            <div class="info">
-                <div class="game-image">
-                    <img src="./assets/sekiro/Sekiro.webp" alt="Sekiro">
-                </div>
-                <div class="game-content">
-                    <h2>Sekiro</h2>
-                    <p class="price">&euro; 59.99</p>
-                    <a href="https://en.wikipedia.org/wiki/Sekiro:_Shadows_Die_Twice" target="_blank"
-                        rel="noopener noreferrer">More info</a><br>
-                    <a href="https://youtu.be/rXMX4YJ7Lks" target="_blank" rel="noopener noreferrer">Sekiro
-                        Trailer</a><br><br>
-                    <a href="order.php#sekiro" class="button">Order</a>
-                </div>
+        <div class="info">
+            <div class="game-image">
+                <img src="<?= htmlspecialchars($product["img"], ENT_QUOTES, "UTF-8") ?>"
+                    alt="<?= htmlspecialchars($product["name"], ENT_QUOTES, "UTF-8") ?>">
             </div>
-        </section>
+            <div class="game-content">
+                <h2><?= htmlspecialchars($product["name"], ENT_QUOTES, "UTF-8") ?></h2>
+                <?php if ($product["price"] !== null): ?>
+                    <p class="price">&euro; <?= number_format((float) $product["price"], 2) ?></p>
+                <?php endif; ?>
+                <?php if (!empty($product["description"])): ?>
+                    <p><?= nl2br(htmlspecialchars($product["description"], ENT_QUOTES, "UTF-8")) ?></p>
+                <?php endif; ?>
+                <a href="order.php?id=<?= (int) $product["id"] ?>" class="button">Order</a>
+            </div>
+        </div>
     </div>
 
     <?php include "includes/footer.php"; ?>

@@ -1,10 +1,28 @@
+<?php
+require_once "data.php";
+$id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
+
+if ($id === false || $id === null || $id < 1) {
+    http_response_code(400);
+    exit("ID de producto no válido.");
+}
+
+$statement = $pdo->prepare("SELECT id, name, price, img FROM producten WHERE id = ?");
+$statement->execute([$id]);
+$product = $statement->fetch();
+
+if (!$product) {
+    http_response_code(404);
+    exit("Producto no encontrado.");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Orders</title>
+    <title>Order: <?= htmlspecialchars($product["name"], ENT_QUOTES, "UTF-8") ?></title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,47 +32,50 @@
     <a href="index.php#products" class="button">&larr; Back to all games</a>
 
     <div id="product-info">
-        <section id="sekiro">
-            <div class="info">
-                <div class="game-image">
-                    <img src="./assets/sekiro/Sekiro.webp" alt="Sekiro">
-                </div>
-                <div class="game-content">
-                    <form class="formulier">
-                        <h2>Bestellen: Sekiro</h2>
-                        <div class="veld">
-                            <label for="sekiro-voornaam">Voornaam</label>
-                            <input type="text" id="sekiro-voornaam" name="voornaam" required>
-                        </div>
-                        <div class="veld">
-                            <label for="sekiro-achternaam">Achternaam</label>
-                            <input type="text" id="sekiro-achternaam" name="achternaam" required>
-                        </div>
-                        <div class="veld">
-                            <label for="sekiro-email">E-mailadres</label>
-                            <input type="email" id="sekiro-email" name="email" required>
-                        </div>
-                        <div class="veld">
-                            <label for="sekiro-aantal">Aantal</label>
-                            <input type="number" id="sekiro-aantal" name="aantal" min="1" max="10" value="1" required>
-                        </div>
-                        <div class="veld">
-                            <label for="sekiro-editie">Editie</label>
-                            <select id="sekiro-editie" name="editie">
-                                <option value="standard">Standard</option>
-                                <option value="support">Support</option>
-                                <option value="collector">Collector</option>
-                            </select>
-                        </div>
-                        <div class="veld checkbox-veld">
-                            <input type="checkbox" id="sekiro-voorwaarden" name="voorwaarden" required>
-                            <label for="sekiro-voorwaarden">Ik ga akkoord met de voorwaarden</label>
-                        </div>
-                        <button type="submit" class="button">Bestelling plaatsen</button>
-                    </form>
-                </div>
+        <div class="info">
+            <div class="game-image">
+                <img src="<?= htmlspecialchars($product["img"], ENT_QUOTES, "UTF-8") ?>"
+                    alt="<?= htmlspecialchars($product["name"], ENT_QUOTES, "UTF-8") ?>">
             </div>
-        </section>
+            <div class="game-content">
+                <form class="formulier" method="post">
+                    <h2>Bestellen: <?= htmlspecialchars($product["name"], ENT_QUOTES, "UTF-8") ?></h2>
+                    <?php if ($product["price"] !== null): ?>
+                        <p class="price">&euro; <?= number_format((float) $product["price"], 2) ?></p>
+                    <?php endif; ?>
+                    <input type="hidden" name="product_id" value="<?= (int) $product["id"] ?>">
+                    <div class="veld">
+                        <label for="voornaam">Voornaam</label>
+                        <input type="text" id="voornaam" name="voornaam" required>
+                    </div>
+                    <div class="veld">
+                        <label for="achternaam">Achternaam</label>
+                        <input type="text" id="achternaam" name="achternaam" required>
+                    </div>
+                    <div class="veld">
+                        <label for="email">E-mailadres</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="veld">
+                        <label for="aantal">Aantal</label>
+                        <input type="number" id="aantal" name="aantal" min="1" max="10" value="1" required>
+                    </div>
+                    <div class="veld">
+                        <label for="editie">Editie</label>
+                        <select id="editie" name="editie">
+                            <option value="standard">Standard</option>
+                            <option value="support">Support</option>
+                            <option value="collector">Collector</option>
+                        </select>
+                    </div>
+                    <div class="veld checkbox-veld">
+                        <input type="checkbox" id="voorwaarden" name="voorwaarden" required>
+                        <label for="voorwaarden">Ik ga akkoord met de voorwaarden</label>
+                    </div>
+                    <button type="submit" class="button">Bestelling plaatsen</button>
+                </form>
+            </div>
+        </div>
     </div>
     <?php include "includes/footer.php"; ?>
 </body>

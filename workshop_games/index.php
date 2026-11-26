@@ -1,3 +1,7 @@
+<?php
+require_once "data.php";
+$products = $pdo->query("SELECT id, name, img FROM producten ORDER BY name")->fetchAll();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,11 +31,14 @@
         <section id="products">
             <h2>Our Games</h2>
             <div id="product-list">
-                <div class="product">
-                    <h3>Sekiro</h3>
-                    <img src="./assets/sekiro/Sekiro.webp" alt="Sekiro"><br>
-                    <a href="detail.php#sekiro" class="button">View</a>
-                </div>
+                <?php foreach ($products as $product): ?>
+                    <div class="product">
+                        <h3><?= htmlspecialchars($product["name"], ENT_QUOTES, "UTF-8") ?></h3>
+                        <img src="<?= htmlspecialchars($product["img"], ENT_QUOTES, "UTF-8") ?>"
+                            alt="<?= htmlspecialchars($product["name"], ENT_QUOTES, "UTF-8") ?>"><br>
+                        <a href="detail.php?id=<?= (int) $product["id"] ?>" class="button">View</a>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </section>
 
